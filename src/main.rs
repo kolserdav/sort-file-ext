@@ -78,7 +78,7 @@ fn main() {
         ));
 
         current += 1;
-        println!("{current}/{len}");
+        println!("{current}/{len} {:?}", &dest_path);
 
         if !dest_path.exists() {
             let res = copy(src_path, dest_path);
@@ -88,7 +88,7 @@ fn main() {
         }
     }
 
-    println!("Sorting end");
+    println!("Sorting end with {} errors", errors.len());
 
     let mut num = 0;
     for error in errors {
